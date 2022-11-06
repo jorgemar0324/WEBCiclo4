@@ -16,10 +16,23 @@ const routes: Routes = [
   {
     path: 'error',
     component: ErrorComponent,
+  },
+  {
+    path: 'seguridad',
+    loadChildren: () => import('./modulos/seguridad/seguridad.module').then(m => m.SeguridadModule)
   },{
-    path: '**',
-    redirectTo: '/error'
-  }
+    path: 'admin',
+    loadChildren: () => import('./modulos/admin/admin.module').then(m => m.AdminModule)
+  },{
+    path: 'clientes',
+    loadChildren: () => import('./modulos/clientes/clientes.module').then(m => m.ClientesModule)
+  },{
+    path: 'encomiendas',
+    loadChildren: () => import('./modulos/encomiendas/encomiendas.module').then(m => m.EncomiendasModule)
+  },{
+    path: 'servicios',
+    loadChildren: () => import('./modulos/servicios/servicios.module').then(m => m.ServiciosModule)
+  },
 
 ]
 
