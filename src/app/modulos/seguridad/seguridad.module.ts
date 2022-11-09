@@ -8,6 +8,8 @@ import { RecuperarClaveComponent } from './recuperar-clave/recuperar-clave.compo
 import { CerrarSesionComponent } from './cerrar-sesion/cerrar-sesion.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+
+
 @NgModule({
   declarations: [
     LoginComponent,
@@ -17,9 +19,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   ],
   imports: [
     CommonModule,
-    SeguridadRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SeguridadRoutingModule
+    
   ]
 })
 export class SeguridadModule { }

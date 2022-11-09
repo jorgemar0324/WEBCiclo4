@@ -4,20 +4,24 @@ import { CreateComponent } from './create/create.component';
 import { EditComponent } from './edit/edit.component';
 import { GetComponent } from './get/get.component';
 
-const routes: Routes = [{
-  path: 'create',
-  component: CreateComponent,
-},{
-  path: 'edit',
-  component: EditComponent,
-},{
-  path: 'get',
-  component: GetComponent,
-},{
-  path: '',
-  pathMatch: 'full',
-  redirectTo: 'get'
-}
+
+const routes: Routes = [
+  {
+    path: 'create',
+    component: CreateComponent,
+  },{
+    path: 'edit',
+    component: EditComponent,
+  },{
+    path: 'get',
+    component: GetComponent,
+  },{
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'get'
+  }
+
+  
 ];
 
 @NgModule({

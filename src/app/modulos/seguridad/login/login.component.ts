@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import * as cryptoJS from 'crypto-js';
 
 @Component({
   selector: 'app-login',
@@ -8,7 +7,6 @@ import * as cryptoJS from 'crypto-js';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  
   fgValidacion = this.fb.group({
     correo: ['', [Validators.required, Validators.email]],
     clave: ['', [Validators.required]]
@@ -19,6 +17,5 @@ export class LoginComponent implements OnInit {
   }
 
   identificarUsuario(){}
-
 
 }
