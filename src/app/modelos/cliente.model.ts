@@ -1,4 +1,4 @@
-export class ClienteModelo{
+export class ClienteModel{
     id?: String;
     cedula?: String;
     nombre?: string;
@@ -9,5 +9,4 @@ export class ClienteModelo{
     direccion?: string;
     telefono?: string;
     email?: string;
-    isLoggedIn?: boolean = false;
   }

@@ -3,8 +3,7 @@
      <div class="card grey lighten-3">
          <div class="card-content">
           <h4 class="card-title center-align">Identificación de Usuarios</h4>
-          <!-- <form [formGroup]="fgValidacion" (ngSubmit)="identificarUsuario()"> -->
-            <form>
+          <form [formGroup]="fgValidacion" (ngSubmit)="identificarUsuario()">
             <div class="row">
               <div class="input-field col s12">
                 <i class="material-icons prefix">email</i>
@@ -26,8 +25,7 @@
               </div>
             </div>
             <div class="row center-align">
-              <!-- <button [disabled]="!fgValidacion.valid" class="btn waves-effect waves-light" type="submit" name="action">Ingresar -->
-              <button class="btn waves-effect waves-light" type="submit" name="action">Ingresar
+              <button [disabled]="!fgValidacion.valid" class="btn waves-effect waves-light" type="submit" name="action">Ingresar
                 <i class="material-icons right">send</i>
               </button>
             </div>
