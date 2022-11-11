@@ -19,9 +19,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   ],
   imports: [
     CommonModule,
+    SeguridadRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    SeguridadRoutingModule
     
   ]
 })
