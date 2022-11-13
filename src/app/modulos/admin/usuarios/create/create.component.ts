@@ -40,7 +40,7 @@ export class CreateComponent implements OnInit {
     },
     (error: any) => {
       console.log(error)
-      alert("Error en el envio");
+      Swal.fire('¡Error al enviar!', '', 'error')
     })
   }
 
