@@ -74,7 +74,7 @@ export class EditComponent implements OnInit {
     },
     (error: any) => {
       console.log(error)
-      Swal.fire('¡Error al enviar!', '', 'error')
+      Swal.fire('¡Error al editar cliente!', '', 'error')
     })
   }
 
