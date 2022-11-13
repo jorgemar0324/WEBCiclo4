@@ -1,6 +1,6 @@
 export class ClienteModel{
-    id?: String;
-    cedula?: String;
+    id?: string;
+    cedula?: string;
     nombre?: string;
     apellidos?: string;
     pais?: string;

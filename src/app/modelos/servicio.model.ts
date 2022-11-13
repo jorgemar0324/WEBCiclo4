@@ -1,8 +1,8 @@
 export class ServicioModel{
-    id?: String;
+    id?: string;
     fecha?: Date;
-    valor?: String;
-    origen?: String;
-    destino?: String;
-    encomienda?: String;
+    valor?: string;
+    origen?: string;
+    destino?: string;
+    encomienda?: string;
   }
