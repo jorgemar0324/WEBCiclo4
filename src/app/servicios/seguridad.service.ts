@@ -11,7 +11,9 @@ export class SeguridadService {
   url = "http://localhost:3000";
   sessionUserData = new BehaviorSubject<UsuarioModel>(new UsuarioModel());
 
-  constructor(private http: HttpClient) {this.verificarSesion(); }
+  constructor(private http: HttpClient) { 
+    this.verificarSesion();
+  }
 
   login(correo: string, clave: string): Observable<any> {
     //Hacemos la solicitud al servicio web de login pasandole usuario y clave
@@ -78,7 +80,7 @@ export class SeguridadService {
     return null
   }
 
-datosUsuarioSesion(){
+  datosUsuarioSesion(){
     return this.sessionUserData.asObservable();
   }
 
@@ -90,14 +92,5 @@ datosUsuarioSesion(){
     }
     return ''
   }
-
-
-
-
-
-
-
-
-
 
 }

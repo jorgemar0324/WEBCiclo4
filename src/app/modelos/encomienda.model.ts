@@ -1,8 +1,7 @@
 export class EncomiendaModel{
-    id?: String;
-    descripcion?: String;
+    id?: string;
+    descripcion?: string;
     peso?: number;
     tipo?: string;
     presentacion?: string;
-
   }

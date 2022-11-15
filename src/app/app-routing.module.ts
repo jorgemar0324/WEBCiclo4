@@ -36,11 +36,7 @@ const routes: Routes = [
   {
     path: 'error',
     component: ErrorComponent,
-  }, {
-    path: '**',
-    redirectTo: '/error'
   }
-
 ]
 
 @NgModule({
