@@ -20,8 +20,8 @@
           <td>{{p.correo}}</td>
           <td>{{p.telefono}}</td>
           <td>
-            <a routerLink="/admin/edit/{{p.id}}" class="btn">Editar</a>
-            <button class="btn red" (click)="delete(p.id)">Eliminar</button>
+            <a routerLink="/admin/edit/{{p.id}}" class="btn"><i class="material-icons">create</i></a>
+            <button class="btn red" (click)="delete(p.id)"><i class="material-icons">delete</i></button>
           </td>
         </tr>
       </tbody>
