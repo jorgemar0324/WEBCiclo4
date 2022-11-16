@@ -27,7 +27,7 @@ fgValidacion = this.fb.group({
 
 store(){
   let servicio = new ServicioModel();
-  servicio.fecha = this.fgValidacion.controls["fecha"].value as unknown as Date;
+  servicio.fecha = this.fgValidacion.controls["fecha"].value as string;
   servicio.valor = this.fgValidacion.controls["valor"].value as string;
   servicio.origen = this.fgValidacion.controls["origen"].value as string;
   servicio.destino = this.fgValidacion.controls["destino"].value as string;
