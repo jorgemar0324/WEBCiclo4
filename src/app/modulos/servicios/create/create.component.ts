@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ClienteModel } from 'src/app/modelos/cliente.model';
+import { EncomiendaModel } from 'src/app/modelos/encomienda.model';
 import { ServicioModel } from 'src/app/modelos/servicio.model';
+import { ClienteService } from 'src/app/servicios/cliente.service';
+import { EncomiendaService } from 'src/app/servicios/encomienda.service';
 import { ServicioService } from 'src/app/servicios/servicio.service';
 import Swal from 'sweetalert2'
 
@@ -14,8 +18,12 @@ export class CreateComponent implements OnInit {
 
   constructor(private fb: FormBuilder,
     private servicioService: ServicioService,
-    private router: Router
+    private router: Router,
+    private clienteService: ClienteService,
+    private encomiendaService: EncomiendaService
 ) { }
+listadoClientes: ClienteModel[] = []
+listadoEncomiendas: EncomiendaModel[] = []
 
 fgValidacion = this.fb.group({
   fecha: ['', [Validators.required]],
@@ -39,12 +47,27 @@ store(){
   },
   (error: any) => {
     console.log(error)
-    alert("Error en el envio");
+    Swal.fire('No se pudo Registrar el servicio!', '', 'error')
   })
 }
 
+getAllClientes(){
+  this.clienteService.getAll().subscribe((data: ClienteModel[]) => {
+    this.listadoClientes = data
+    console.log(data)
+  })
+}
+
+getAllEncomiendas(){
+  this.encomiendaService.getAll().subscribe((data: EncomiendaModel[]) => {
+    this.listadoEncomiendas = data
+    console.log(data)
+  })
+}
 
 ngOnInit(): void {
+  this.getAllClientes();
+  this.getAllEncomiendas();
 }
 
 }

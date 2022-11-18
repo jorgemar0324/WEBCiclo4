@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ClienteModel } from 'src/app/modelos/cliente.model';
+import { EncomiendaModel } from 'src/app/modelos/encomienda.model';
 import { ServicioModel } from 'src/app/modelos/servicio.model';
+import { ClienteService } from 'src/app/servicios/cliente.service';
+import { EncomiendaService } from 'src/app/servicios/encomienda.service';
 import { ServicioService } from 'src/app/servicios/servicio.service';
 import Swal from 'sweetalert2'
 
@@ -15,7 +19,12 @@ export class EditComponent implements OnInit {
   constructor(private fb: FormBuilder,
     private servicioService: ServicioService,
     private router: Router,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute,
+    private clienteService: ClienteService,
+    private encomiendaService: EncomiendaService) { }
+
+  listadoClientes: ClienteModel[] = []
+  listadoEncomiendas: EncomiendaModel[] = []
 
   id: string=''
   ngOnInit(): void {
@@ -62,7 +71,5 @@ export class EditComponent implements OnInit {
       Swal.fire('Erorr al editar Servicio!', '', 'error')
     })
   }
-
-
 
 }

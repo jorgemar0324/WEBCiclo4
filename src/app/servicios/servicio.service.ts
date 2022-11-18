@@ -14,7 +14,7 @@ export class ServicioService {
   }
 
   store(servicio: ServicioModel): Observable<ServicioModel> {
-    return this.http.post<ServicioModel>(`${this.url}/usuarios`, {
+    return this.http.post<ServicioModel>(`${this.url}/servicios`, {
       fecha: servicio.fecha,
       valor: servicio.valor,
       origen: servicio.origen,

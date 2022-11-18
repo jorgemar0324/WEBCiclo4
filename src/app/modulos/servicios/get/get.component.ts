@@ -20,19 +20,21 @@ export class GetComponent implements OnInit {
 
   getAll(){
     this.servicioService.getAll().subscribe((data: ServicioModel[]) => {
-      let clienteOrigen = this.clienteService.getWithId(String(data[0]['origen'])).subscribe((origenData: ClienteModel) => {
-        console.log(origenData)
-        data[0]['origen'] = String(origenData.departamento) + ',' + String(origenData.ciudad);      
-      });
-      let clienteDestino = this.clienteService.getWithId(String(data[0]['destino'])).subscribe((destinoData: ClienteModel) => {
-        console.log(destinoData)
-        data[0]['destino'] = String(destinoData.departamento) + ',' + String(destinoData.ciudad);      
-      });
-      
-      let Encomineda = this.encomiendaService.getWithId(String(data[0]['encomienda'])).subscribe((encomiendaData: EncomiendaModel) => {
-        console.log(encomiendaData)
-        data[0]['encomienda'] = 'Encomienda de tipo: ' + String(encomiendaData.tipo);      
-      });
+      for (let index = 0; index < data.length; index++) {
+        let clienteOrigen = this.clienteService.getWithId(String(data[index]['origen'])).subscribe((origenData: ClienteModel) => {
+          console.log(origenData)
+          data[index]['origen'] = String(origenData.departamento) + ',' + String(origenData.ciudad);      
+        });
+        let clienteDestino = this.clienteService.getWithId(String(data[index]['destino'])).subscribe((destinoData: ClienteModel) => {
+          console.log(destinoData)
+          data[index]['destino'] = String(destinoData.departamento) + ',' + String(destinoData.ciudad);      
+        });
+        
+        let Encomineda = this.encomiendaService.getWithId(String(data[index]['encomienda'])).subscribe((encomiendaData: EncomiendaModel) => {
+          console.log(encomiendaData)
+          data[index]['encomienda'] = 'Encomienda de tipo: ' + String(encomiendaData.tipo);      
+        });
+      }
 
       this.listado = data
       console.log(data)

@@ -13,21 +13,27 @@
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input formControlName="origen" type="text" class="validate">
-          <label for="origen">Origen</label>
+          <select class="browser-default" formControlName="origen" >
+            <option value="" disabled selected>Seleccione cliente de origen</option>
+            <option *ngFor="let clientes of listadoClientes" value="{{clientes.id}}">{{clientes.nombre}} - {{clientes.apellidos}}</option>
+          </select>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-            <input formControlName="destino" type="text" class="validate">
-            <label for="destino">Destino</label>
-          </div>
+          <select class="browser-default" formControlName="destino" >
+            <option value="" disabled selected>Seleccione cliente de destino</option>
+            <option *ngFor="let clientes of listadoClientes" value="{{clientes.id}}">{{clientes.nombre}} - {{clientes.apellidos}}</option>
+          </select>
+        </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-            <input formControlName="encomienda" type="text" class="validate">
-            <label for="encomienda">Encomineda</label>
-          </div>
+          <select class="browser-default" formControlName="encomienda" >
+            <option value="" disabled selected>Seleccione Encomienda</option>
+            <option *ngFor="let encomiendas of listadoEncomiendas" value="{{encomiendas.id}}">{{encomiendas.tipo}} - {{encomiendas.presentacion}}</option>
+          </select>
+        </div>
       </div>
    
       <div class="row center-align">
